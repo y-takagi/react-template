@@ -1,26 +1,29 @@
-NPX := npx
-NPM := npm
+PNPM := pnpm
 
 .PHONY: install
 install:
-	$(NPM) install
+	$(PNPM) install
 
-.PHONY: typecheck
-typecheck:
-	$(NPX) tsc --noEmit
-
-.PHONY: check
-check:
-	$(NPX) biome ci .
-
-.PHONY: check-fix
-check-fix:
-	$(NPX) biome check --write .
-
-.PHONY: start
-start:
-	$(NPX) vite --port=3001
+.PHONY: dev
+dev:
+	$(PNPM) vite
 
 .PHONY: build
 build:
-	$(NPX) vite build
+	$(PNPM) vite build
+
+.PHONY: typecheck
+typecheck:
+	$(PNPM) tsc --noEmit
+
+.PHONY: lint
+lint:
+	$(PNPM) eslint './src/**/*.{ts,tsx}'
+
+.PHONY: check-format
+check-format:
+	$(PNPM) prettier --check .
+
+.PHONY: format
+format:
+	$(PNPM) prettier --write .

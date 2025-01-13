@@ -1,14 +1,20 @@
 # react-template
 
-## Libraries
+## Requirements
 
-- React
-- Vite
-- Tanstack Router
-- Tanstack Query
-- Tailwindcss
+Each version is at package.json.
 
-## Dev Libraries
+- Node.js
+- pnpm
 
-- Vitest
-- Biome
+## Setup
+
+```
+make install
+```
+
+## Run dev server
+
+```
+make dev
+```
