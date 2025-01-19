@@ -7,7 +7,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['dist', 'src/libs', '**/*.gen.ts'],
+    ignores: ['dist', '**/*.gen.ts'],
   },
   {
     files: ['src/**/*.{ts,tsx}'],
@@ -36,7 +36,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_' }],
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true, allowNullish: true }],
-      '@typescript-eslint/strict-boolean-expressions': ['error', { allowNumber: false, allowString: false }],
+      '@typescript-eslint/strict-boolean-expressions': ['error', { allowNumber: false, allowString: false, allowNullableBoolean: true }],
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       '@typescript-eslint/only-throw-error': 'off',
       '@typescript-eslint/no-floating-promises': 'off',
